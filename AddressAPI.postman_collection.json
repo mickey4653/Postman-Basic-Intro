@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "3f57679d-fba9-4900-8192-eaf69cf4312e",
+		"name": "Address API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18190627"
+	},
+	"item": [
+		{
+			"name": "Get Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Correct City is returned\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.address.city).to.eql(\"Belmont\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://25536437-5c33-435a-a284-efd3f231bc7d.mock.pstmn.io/getAddress/1",
+					"protocol": "https",
+					"host": [
+						"25536437-5c33-435a-a284-efd3f231bc7d",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"getAddress",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Address",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://25536437-5c33-435a-a284-efd3f231bc7d.mock.pstmn.io/getAddress/1",
+							"protocol": "https",
+							"host": [
+								"25536437-5c33-435a-a284-efd3f231bc7d",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"getAddress",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"businessId\": 1,\n    \"name\": \"Amalgamated Steel\",\n    \"address\": {\n        \"street\": \"123 Main St.\",\n        \"city\": \"Belmont\",\n        \"state\": \"MA\",\n        \"postalCode\": \"01734\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
